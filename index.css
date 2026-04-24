@@ -1,0 +1,283 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables (Design System) */
+:root {
+    --bg: #0f172a;
+    --card: #111827;
+    --primary: #6366f1;
+    --primary-hover: #4f46e5;
+    --danger: #ef4444;
+    --success: #22c55e;
+    --text: #e5e7eb;
+    --muted: #9ca3af;
+    --border: rgba(255, 255, 255, 0.08);
+    --radius: 14px;
+}
+ul{
+    padding: 0;
+    margin: 0;
+}
+
+/* Body */
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f172a, #020617);
+    font-family: 'Segoe UI', sans-serif;
+    color: var(--text);
+}
+
+/* App Container */
+.todo_app {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+/* .todo_app:hover {
+    transform: translateY(-5px);
+} */
+
+/* Header */
+.todo_app_header h1 {
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Input */
+.input-group input {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: var(--radius) 0 0 var(--radius);
+}
+
+.input-group input:focus {
+    box-shadow: none;
+    border-color: var(--primary);
+}
+
+input::placeholder {
+    color: var(--muted) !important;
+}
+/* Add Button */
+#todo_add {
+    border-radius: 0 var(--radius) var(--radius) 0;
+    background: var(--primary);
+    border: none;
+    transition: 0.3s;
+}
+
+#todo_add:hover {
+    background: var(--primary-hover);
+    transform: scale(0.96);
+}
+
+/* List */
+#todo_list li {
+    padding: 14px 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+#todo_list li:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Todo text */
+.todo_item {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Buttons */
+.btn-action {
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.25s;
+    border: none;
+}
+
+/* Edit */
+.btn-primary {
+    background: var(--primary);
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+}
+
+/* Delete */
+.btn-danger {
+    background: var(--danger);
+}
+
+.btn-danger:hover {
+    filter: brightness(1.1);
+}
+
+/* Complete */
+.btn-info {
+    background: var(--success);
+    color: #fff;
+}
+
+.btn-info:hover {
+    filter: brightness(1.1);
+}
+
+/* Icons */
+.btn-action i {
+    font-size: 14px;
+    /* color: var(--text); */
+}
+
+/* Completed Task */
+.completed {
+    text-decoration: line-through;
+    color: var(--muted);
+    opacity: 0.7;
+}
+
+/* Scroll */
+#todo_list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Scrollbar */
+#todo_list::-webkit-scrollbar {
+    width: 6px;
+}
+
+#todo_list::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+    cursor: grab;
+}
+
+#todo_list button {
+    cursor: pointer;
+}
+
+
+/* Item */
+.todo-item {
+    padding: 14px 12px;
+    border-bottom: 1px solid var(--border);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.todo-item:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* Actions container */
+.actions {
+    display: flex;
+    gap: 8px;
+}
+
+/* Buttons base */
+.btn-action {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.25s;
+    border: 1px solid transparent;
+}
+
+/* Icons */
+.btn-action i {
+    font-size: 16px;
+    transition: 0.2s;
+}
+
+/* Hover base */
+.btn-action:hover {
+    transform: translateY(-2px) scale(1.05);
+}
+
+/* Edit */
+.btn-action.edit:hover {
+    background: rgba(99, 102, 241, 0.15);
+    border-color: var(--primary);
+}
+
+.btn-action.edit:hover i {
+    color: var(--primary);
+}
+
+/* Delete */
+.btn-action.delete:hover {
+    background: rgba(239, 68, 68, 0.15);
+    border-color: var(--danger);
+}
+
+.btn-action.delete:hover i {
+    color: var(--danger);
+}
+
+/* Complete */
+.btn-action.complete:hover {
+    background: rgba(34, 197, 94, 0.15);
+    border-color: var(--success);
+}
+
+.btn-action.complete:hover i {
+    color: var(--success);
+}
+
+/* Click effect */
+.btn-action:active {
+    transform: scale(0.9);
+}
+
+/* Completed state */
+.completed {
+    text-decoration: line-through;
+    color: var(--muted);
+    opacity: 0.6;
+}
+
+.completed + .actions .complete {
+    background: rgba(34, 197, 94, 0.2);
+}
+
+.completed + .actions .complete i {
+    color: var(--success);
+}
+.btn-action:hover i {
+    transform: scale(1.2);
+}
+
+.todo_item.completed{
+    text-decoration: line-through;
+    color: var(--muted);
+}
+
+.completed_task_btn{
+    background: rgba(34, 197, 94, 0.15);
+    border-color: var(--success);
+}
+.completed_task_btn i{
+    color: var(--success);
+}
+
